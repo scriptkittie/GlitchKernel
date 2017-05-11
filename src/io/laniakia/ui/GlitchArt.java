@@ -133,6 +133,7 @@ public class GlitchArt extends JFrame {
 	 * Create the frame.
 	 */
 	public GlitchArt() {
+		setResizable(false);
 		setTitle("Glitch Kernel");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 957, 482);
