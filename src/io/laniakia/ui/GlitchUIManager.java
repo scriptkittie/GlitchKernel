@@ -125,11 +125,7 @@ public class GlitchUIManager
 	{
 		resetPanelOptions();
 		this.glitchArt.txtPath.setText("");
-		refreshPreviewImage();
-		for(int i = 0; i < this.glitchController.getAlgorithmList().size(); i++)
-		{
-			this.glitchController.getAlgorithmList().remove(i);
-		}
+		this.glitchController.getAlgorithmList().clear();
 		this.glitchArt.jAlgorithmList.setListData(glitchController.getGlitchAlgorithmChainList());
 		this.glitchArt.lblImageRender.setIcon(null);
 		this.glitchController = new GlitchController();
