@@ -111,7 +111,7 @@ ImageIO.write(img, "jpg", new File("C:\\testImage.png"));
 <details> 
   <summary>Open spoiler to view changelog </summary>
   
-### 1.0.0
+### 1.0.1
 - Initial release.
 </details>
 
