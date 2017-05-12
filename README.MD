@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/scriptkittie/GlitchKernel.svg?branch=master)](https://travis-ci.org/scriptkittie/GlitchKernel)
 
 ## Overview
-Glitch Kernel is an art tool for data bending, glitching, and distorting static images through a technique known as *Pixel Sorting*. *Pixel Sorting* is a technique for creating a form of art known as *Glitch art*. Pixel Sorting algorithms **"glitch"** images by rearranging clusters of pixels, blocks of pixels, or individual pixels within an image with respect to one or more arbitrary properties. Some examples of such properties are **hue**, **brightness**, **saturation**, and **vibrance**. Some popular pixel sorting algorithms/techniques that use these properties are:
+Glitch Kernel is an art tool for data bending, glitching, and distorting static images through *Pixel Sorting* and other image distortion techniques. The result of distorting an image in these ways is called *Glitch art*. Pixel Sorting algorithms and image distortion techniques **"glitch"** images by rearranging clusters of pixels, blocks of pixels, or individual pixels within an image with respect to one or more arbitrary properties. Some examples of such properties are **hue**, **brightness**, **saturation**, and **vibrance**. Image distortion techniques may also edit the binary data of an image, corrupt bytes of an image, or randomly shift bytes around within the binary data of an image to distort the image.  Some popular pixel sorting algorithms/data bending techniques that use these properties are:
 
 + ASDFPixelSort
 + Datamoshing
