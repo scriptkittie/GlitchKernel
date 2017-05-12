@@ -112,6 +112,11 @@ ImageIO.write(img, "jpg", new File("C:\\testImage.png"));
   <summary>Open spoiler to view changelog </summary>
   
 ### 1.0.1
+- Include resources folder in correct location for packed JAR file.
+- Fix reset panel bug.
+</details>
+  
+### 1.0.0
 - Initial release.
 </details>
 
