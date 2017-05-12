@@ -128,3 +128,7 @@ Information the wonderful world of Glitch Art: [GlitchEt](http://www.glitchet.co
 Darryl Burke for [StretchIcon.java](https://tips4java.wordpress.com/2012/03/31/stretch-icon/)
 
 Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/Color.cs)
+
+### Sample
+
+![alt text](http://i.imgur.com/fm98H5Y.png "Sample image generated with Glitch Kernel")
