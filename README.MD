@@ -140,7 +140,7 @@ Please report any issues to the issues section & as always if you have any funct
 If you have an addition to the project, fork it and submit a pull request. Any type of contributions are welcome.
 
 ## Credits
-Package written by [StCypher](https://twitter.com/yo_scriptkittie/with_replies)
+Package written by [StCypher](https://twitter.com/necrofiber/with_replies)
 
 Information the wonderful world of Glitch Art: [GlitchEt](http://www.glitchet.com/)
 
