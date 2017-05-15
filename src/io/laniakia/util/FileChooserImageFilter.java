@@ -27,7 +27,7 @@ public class FileChooserImageFilter extends FileFilter
 		{
 			return true;
 		}
-		return (inputFile.getName().toLowerCase().endsWith(fileExtension));
+		return (inputFile.getName().toLowerCase().endsWith(fileExtension.toLowerCase()));
 	}
 
 	@Override
