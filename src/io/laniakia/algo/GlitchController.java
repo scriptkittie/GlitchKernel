@@ -2,6 +2,7 @@ package io.laniakia.algo;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
 import java.io.InputStream;
@@ -19,9 +20,10 @@ import org.apache.logging.log4j.Logger;
 
 import io.laniakia.filter.BrightnessFilter;
 import io.laniakia.filter.RGBShiftFilter;
-import io.laniakia.ui.SelectionPoint;
+import io.laniakia.ui.SelectionShape;
 import io.laniakia.util.GlitchTypes;
 import io.laniakia.util.ImageUtil;
+import io.laniakia.util.SelectionTypes;
 
 public class GlitchController
 {
@@ -83,20 +85,40 @@ public class GlitchController
 				{
 					if(algorithm.getSelectionPoint() != null)
 					{
-						Rectangle selectionPoint = algorithm.getSelectionPoint().getTranslatedRectangle();
+						Rectangle selectionRectangle = algorithm.getSelectionPoint().getTranslatedRectangle();
 						BufferedImage fullSizeImage = ImageUtil.getImageFromBytes(resultImageGlitchedBytes);
-						BufferedImage subImageGlitch = fullSizeImage.getSubimage(selectionPoint.x, selectionPoint.y, (int)selectionPoint.getWidth(), (int)selectionPoint.getHeight());
+						BufferedImage subImageGlitch = fullSizeImage.getSubimage(selectionRectangle.x, selectionRectangle.y, (int)selectionRectangle.getWidth(), (int)selectionRectangle.getHeight());
 						byte[] subImageGlitchedBytes = algorithm.glitchPixels(ImageUtil.getImageBytes(subImageGlitch));
 						Graphics g = fullSizeImage.getGraphics();
-						g.drawImage(ImageUtil.getImageFromBytes(subImageGlitchedBytes), selectionPoint.x, selectionPoint.y, null);
+						BufferedImage glitchedSubImage = ImageUtil.getImageFromBytes(subImageGlitchedBytes);
+						if(algorithm.getSelectionPoint().getSelectionType() == SelectionTypes.RECTANGLE)
+						{
+							g.drawImage(glitchedSubImage, selectionRectangle.x, selectionRectangle.y, null);
+						}
+						else if(algorithm.getSelectionPoint().getSelectionType() == SelectionTypes.FREEHAND)
+						{
+							BufferedImage translatedResizeImage = new BufferedImage(fullSizeImage.getWidth(), fullSizeImage.getHeight(), BufferedImage.TYPE_4BYTE_ABGR);
+							translatedResizeImage.getGraphics().drawImage(glitchedSubImage, selectionRectangle.x, selectionRectangle.y , null);
+							for(int j = 0; j < fullSizeImage.getWidth() - 1; j++)
+							{
+								for(int k = 0; k < fullSizeImage.getHeight() - 1; k++)
+								{
+									Point rectanglePoint = new Point(j, k);
+									if(algorithm.getSelectionPoint().getTranslatedPolygon().contains(rectanglePoint))
+									{
+										g.setColor(new Color(translatedResizeImage.getRGB(j,  k)));
+										g.drawLine(j, k, j, k);
+									}
+								}
+							}
+						}
 						g.dispose();
-						resultImageGlitchedBytes = ImageUtil.getImageBytes(fullSizeImage);
+						resultImageGlitchedBytes = ImageUtil.getImageBytes(fullSizeImage);	
 					}
 					else
 					{
 						resultImageGlitchedBytes = algorithm.glitchPixels(resultImageGlitchedBytes);
 					}
-					
 				}
 				catch (Exception e) 
 				{
@@ -191,9 +213,9 @@ public class GlitchController
 		}
 	}
 	
-	public List<SelectionPoint> getSelectionPointList()
+	public List<SelectionShape> getSelectionPointList()
 	{
-		List<SelectionPoint> selectionPointList = new ArrayList<SelectionPoint>();
+		List<SelectionShape> selectionPointList = new ArrayList<SelectionShape>();
 		for(GlitchAlgorithm algorithm : this.algorithmList)
 		{
 			selectionPointList.add(algorithm.getSelectionPoint());

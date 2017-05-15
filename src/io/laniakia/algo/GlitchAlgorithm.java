@@ -3,7 +3,7 @@ package io.laniakia.algo;
 import java.util.HashMap;
 import java.util.Map;
 
-import io.laniakia.ui.SelectionPoint;
+import io.laniakia.ui.SelectionShape;
 import io.laniakia.util.GlitchTypes;
 
 public abstract class GlitchAlgorithm 
@@ -12,14 +12,14 @@ public abstract class GlitchAlgorithm
 	private GlitchTypes name;
 	private String description;
 	private Map<String, Object> pixelGlitchParameters;
-	private SelectionPoint selectionPoint;
+	private SelectionShape selectionPoint;
 	
 	public GlitchAlgorithm()
 	{
 		this.iterations = 1;
 		this.pixelGlitchParameters = new HashMap<String, Object>();
 	}
-	public GlitchAlgorithm(SelectionPoint selectionPoint)
+	public GlitchAlgorithm(SelectionShape selectionPoint)
 	{
 		super();
 		this.selectionPoint = selectionPoint;
@@ -59,11 +59,11 @@ public abstract class GlitchAlgorithm
 		this.pixelGlitchParameters = pixelGlitchParameters;
 	}
 	
-	public SelectionPoint getSelectionPoint() 
+	public SelectionShape getSelectionPoint() 
 	{
 		return selectionPoint;
 	}
-	public void setSelectionPoint(SelectionPoint selectionPoint) 
+	public void setSelectionPoint(SelectionShape selectionPoint) 
 	{
 		this.selectionPoint = selectionPoint;
 	}

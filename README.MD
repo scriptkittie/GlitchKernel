@@ -43,7 +43,12 @@ Glitch Kernel provides the ability to combine or *stack* multiple algorithms tog
 
 
 ### Selection Regions
-Glitch Kernel provides the ability to pixel sort only a selected region of an image per algorithm. Once an algorithm has been added to the list of algorithm list, and the algorithm in question has been selected, the ability to drag and select a region of the input image on the right hand of the application will be available. When the regenerate button is clicked, and for any subsequent pixel sorting actions, only that region of the image will be pixel sorted, for **only** that algorithm. Each algorithm that is added to the list can have its own selection region to pixel sort. Example: **Offset Pixel Sort** and **Data-as-Sound** algorithms are in the list. **Offset Pixel Sort** can have the upper right hand corner of the image pixel sorted, and **Data-as-Sound** can have the lower left hand corner of the image pixel sorted.
+Glitch Kernel provides the ability to pixel sort only a selected region of an image per algorithm. Once an algorithm has been added to the list of algorithm list, and the algorithm in question has been selected, the ability to drag and select a region of the input image on the right hand of the application will be available. There are two selection modes to select a region, **Freehand** and *Rectangle**. *Freehand* allows for freehand selection of the source image to be selected. **Rectangle** creates a bounded region that expands and contracts in a rectangular shape. When the regenerate button is clicked, and for any subsequent pixel sorting actions, only that region of the image will be pixel sorted, for **only** that algorithm. Each algorithm that is added to the list can have its own selection region to pixel sort. Example: **Offset Pixel Sort** and **Data-as-Sound** algorithms are in the list. **Offset Pixel Sort** can have the upper right hand corner of the image pixel sorted, and **Data-as-Sound** can have the lower left hand corner of the image pixel sorted.
+
+#### Note
+In order to create a selected with freehand selection, the two endpoints of the shape draw must connect together. When the two endpoints of a freehand region are connected, the shape draw will be rendered in *red*. This signifies that a valid freehand shape has been drawn.
+
+![alt text](http://i.imgur.com/9EdWjOK.png "Freehand Selection with region connected together")
 
 To remove selection region and be able to pixel sort the image in its entirety, click the "Clear Selection" button by the top right of the algorithm list.
 
@@ -83,7 +88,7 @@ Just add the following dependencies to your maven pom.xml
 <dependency>
     <groupId>io.laniakia</groupId>
     <artifactId>glitchKernel</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 ### Example Usage
@@ -110,6 +115,11 @@ ImageIO.write(img, "jpg", new File("C:\\testImage.png"));
 
 <details> 
   <summary>Open spoiler to view changelog </summary>
+  
+### 1.0.2
+- Freehand selection mode available for drawing of custom selection regions
+- Fixed bug where bounds of rectangular selection not render properly
+- File selection now  allows for image selection of JPG, JPEG, and PNG format images.
   
 ### 1.0.1
 - Include resources folder in correct location for packed JAR file.

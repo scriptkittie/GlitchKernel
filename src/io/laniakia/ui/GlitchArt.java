@@ -37,6 +37,7 @@ import javax.swing.event.ListSelectionListener;
 
 import io.laniakia.algo.GlitchAlgorithm;
 import io.laniakia.util.GlitchTypes;
+import io.laniakia.util.SelectionTypes;
 
 public class GlitchArt extends JFrame {
 
@@ -105,12 +106,14 @@ public class GlitchArt extends JFrame {
 	public JSlider bitSortHorizontalInterval;
 	
 	public GlitchUIManager glitchUIManager;
-	public SelectionPointManager selectionPointManager;
+	public SelectionManager selectionPointManager;
 	public int resizedHeight;
 	public int resizedWidth;
 	public int realHeight;
 	public int realWidth;
 	public JButton btnReset;
+	public JComboBox selectionType;
+	private JLabel lblSelectionType;
 
 	/**
 	 * Launch the application.
@@ -141,7 +144,7 @@ public class GlitchArt extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		glitchUIManager = new GlitchUIManager(this);
-		selectionPointManager = new SelectionPointManager(glitchUIManager.getGlitchController(), this);
+		selectionPointManager = new SelectionManager(glitchUIManager.getGlitchController(), this);
 		
 		btnOpen = new JButton("Open");
 		btnOpen.addActionListener(new ActionListener() {
@@ -394,6 +397,11 @@ public class GlitchArt extends JFrame {
 			}
 		});
 		
+		selectionType = new JComboBox();
+		selectionType.setModel(new DefaultComboBoxModel(SelectionTypes.values()));
+		
+		lblSelectionType = new JLabel("Selection Type:");
+		
 		
 		GroupLayout gl_layeredPane = new GroupLayout(layeredPane);
 		gl_layeredPane.setHorizontalGroup(
@@ -415,9 +423,12 @@ public class GlitchArt extends JFrame {
 									.addComponent(jAlgorithmList, GroupLayout.PREFERRED_SIZE, 232, GroupLayout.PREFERRED_SIZE)
 									.addGap(18)
 									.addGroup(gl_layeredPane.createParallelGroup(Alignment.LEADING)
-										.addComponent(button_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-										.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
-										.addComponent(btnReset, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)))
+										.addComponent(selectionType, 0, 103, Short.MAX_VALUE)
+										.addGroup(gl_layeredPane.createParallelGroup(Alignment.LEADING, false)
+											.addComponent(lblSelectionType)
+											.addComponent(button_6, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+											.addComponent(button_5, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+											.addComponent(btnReset, GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE))))
 								.addGroup(gl_layeredPane.createSequentialGroup()
 									.addGroup(gl_layeredPane.createParallelGroup(Alignment.TRAILING, false)
 										.addGroup(gl_layeredPane.createSequentialGroup()
@@ -462,7 +473,11 @@ public class GlitchArt extends JFrame {
 							.addGap(10)
 							.addComponent(button_6)
 							.addGap(11)
-							.addComponent(btnReset)))
+							.addComponent(btnReset)
+							.addGap(8)
+							.addComponent(lblSelectionType)
+							.addGap(1)
+							.addComponent(selectionType, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addPreferredGap(ComponentPlacement.RELATED)
 					.addComponent(pixelSortPanel, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
 					.addPreferredGap(ComponentPlacement.UNRELATED)

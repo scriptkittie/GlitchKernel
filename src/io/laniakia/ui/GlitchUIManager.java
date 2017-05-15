@@ -35,6 +35,7 @@ import io.laniakia.algo.PixelSort;
 import io.laniakia.algo.VerticalPixelGlitch;
 import io.laniakia.filter.BrightnessFilter;
 import io.laniakia.filter.RGBShiftFilter;
+import io.laniakia.util.FileChooserImageFilter;
 import io.laniakia.util.GlitchTypes;
 import io.laniakia.util.ImageUtil;
 
@@ -165,6 +166,10 @@ public class GlitchUIManager
 			jFileChooser.setCurrentDirectory(new File("C:\\"));
 		}
 		
+		jFileChooser.setAcceptAllFileFilterUsed(false);
+		jFileChooser.addChoosableFileFilter(new FileChooserImageFilter("JPG", "JPEG Image"));
+		jFileChooser.addChoosableFileFilter(new FileChooserImageFilter("JPEG", "JPEG Image"));
+		jFileChooser.addChoosableFileFilter(new FileChooserImageFilter("PNG", "PNG Image"));
 		int result = jFileChooser.showOpenDialog(new JFrame());
 		if (result == JFileChooser.APPROVE_OPTION) 
 		{

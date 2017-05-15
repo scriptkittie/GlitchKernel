@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.laniakia</groupId>
 	<artifactId>glitchKernel</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 	<name>Glitch Kernel</name>
 	<url>https://github.com/scriptkittie/</url>
 	<description>A Glitch art tool for data bending, glitching, and distorting static images.</description>

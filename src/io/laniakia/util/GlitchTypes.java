@@ -1,10 +1,9 @@
 package io.laniakia.util;
 
-public enum GlitchTypes {
-	//DATABEND ("Databend"),
+public enum GlitchTypes 
+{
 	DATA_AS_SOUND ("Data-As-Sound"),
 	FRACTAL_PIXEL_DISPERSE ("Fractal Pixel Disperse"),
-	//ASDF_SORT ("ASDF Sort"),
 	BIT_SORT ("Bit Sort"),
 	VERTICAL_PIXEL_GLITCH ("Vertical Glitch Sort"),
 	OFFSET_PIXEL_SORT ("Offset Pixel Sort"),
