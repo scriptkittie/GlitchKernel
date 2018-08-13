@@ -15,7 +15,7 @@ Glitch Kernel ships with eight unique pixel sorting algorithms that can be appli
 
 + **Data-as-Sound** - An algorithm that glitches images by interpreting as sound. The input image is transformed into a  variable bitrate WAV audio stream with a custom audio codec, overlayed and composited with the original image.
 
-+ **Fractal Pixel Disperse** - Here, the input image is broken down into randomized regions using Möbius transformations, where each regions three different color channels are separated and distorted (commonly known as RGB Shifting). This process is repeated recursively the higher the distortion level.
++ **Fractal Pixel Disperse** - Here, the input image is broken down into randomized regions using MÃ¶bius transformations, where each regions three different color channels are separated and distorted (commonly known as RGB Shifting). This process is repeated recursively the higher the distortion level.
 
 + **Bit Sort** - An algorithm for sorting a collection of pixels in arbitrary order. For each pixel in an image, the next pixel is randomly displaced into another location, vertically or horizontally,  on the images (x, y) coordinate system.
 
@@ -157,11 +157,6 @@ Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/co
 
 ### GIF Samples
 
-![Imgur Image](http://i.imgur.com/1BAZExq)
-
-![Imgur Image](http://i.imgur.com/zTONrOD)
 ![alt text](http://i.imgur.com/1BAZExq.gif "Sample image generated with Glitch Kernel")
-
 ![alt text](http://i.imgur.com/4Tg8yQu.gif "Sample image generated with Glitch Kernel")
-
 ![alt text](http://i.imgur.com/1VYamKm.gif "Sample image generated with Glitch Kernel")
