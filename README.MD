@@ -157,6 +157,6 @@ Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/co
 
 ### GIF Samples
 
-![alt text](http://i.imgur.com/1BAZExq.gif "Sample image generated with Glitch Kernel")
+![Imgur Image](http://i.imgur.com/1BAZExq)
 
-![alt text](http://i.imgur.com/4Tg8yQu.gif "Sample image generated with Glitch Kernel")
+![Imgur Image](http://i.imgur.com/4Tg8yQu)
