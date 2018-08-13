@@ -11,7 +11,7 @@ Glitch Kernel is an art tool for data bending, glitching, and distorting static 
 + Databending
 + 2D Dithering
 
-Glitch Kernel ships with eight unique pixel sorting algorithms that can be applied and stacked together that allows for thousands of unique combinations of pixel sorting that can be applied to an image. The algorithms included are:
+Glitch Kernel ships with eight unique pixel sorting algorithms that can be applied and stacked together that allows for thousands of unique combinations of pixel sorting that can be applied to an image. The most recent update, 1.1.0, adds support for these algorithms to be applied to GIF images. The algorithms included are:
 
 + **Data-as-Sound** - An algorithm that glitches images by interpreting as sound. The input image is transformed into a  variable bitrate WAV audio stream with a custom audio codec, overlayed and composited with the original image.
 
@@ -67,6 +67,9 @@ Each pixel sorting algorithm has an arbitrary level of randomness in addition to
 
 ### User Options
 Glitch Kernel provides user options for each algorithm and filter in addition to arbitrary randomness that exists in each algorithm. Even if user parameters are unchanged, regenerating a new result will yield a different result due to this. Each time a user option is changed, the image will automatically be regenerated with the new user options applied. The user options do apply to selection regions.
+
+### GIF Support
+Glitch Kernel now has support for animated Graphics Interchange Formated images. The "GIF Speed" option determines the frame delay between GIF frames. When a GIF is exported, this will determine the speed of the GIF. This options also determines how fast the algorithm effects appear to be moving on the GIF image. The "Frame" slider controls what frame you are viewing of the GIF. This ability lets you preview what each frame looks like when an algorithm is run on that particular frame. When exporting an image, Glitch Kernel performs exactly as it would for a static image. Adding the extension ".GIF" will export the particular image as a GIF image.
 
 ### Exporting Images
 Images can be exported to PNG format by clicking on the Export button on the top right of the application. Once the path has been chosen in the dialogue, the file will be saved to that location.
@@ -141,7 +144,6 @@ Please report any issues to the issues section & as always if you have any funct
 If you have an addition to the project, fork it and submit a pull request. Any type of contributions are welcome.
 
 ## Credits
-Package written by [StCypher](https://twitter.com/necrofiber/with_replies)
 
 Information the wonderful world of Glitch Art: [GlitchEt](http://www.glitchet.com/)
 
@@ -149,6 +151,12 @@ Darryl Burke for [StretchIcon.java](https://tips4java.wordpress.com/2012/03/31/s
 
 Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/Color.cs)
 
-### Sample
+### Static Samples
 
 ![alt text](http://i.imgur.com/fm98H5Y.png "Sample image generated with Glitch Kernel")
+
+### GIF Samples
+
+![alt text](https://i.imgur.com/XqHirOI.gif "Sample image generated with Glitch Kernel")
+
+![alt text](https://i.imgur.com/lkdHxNM.gif "Sample image generated with Glitch Kernel")
