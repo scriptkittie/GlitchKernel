@@ -157,6 +157,6 @@ Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/co
 
 ### GIF Samples
 
-![Imgur Image](http://i.imgur.com/1BAZExq)
+![Imgur Image](http://i.imgur.com/1BAZExq.gif)
 
-![Imgur Image](http://i.imgur.com/4Tg8yQu)
+![Imgur Image](http://i.imgur.com/zTONrOD.gif)
