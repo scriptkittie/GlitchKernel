@@ -151,6 +151,10 @@ Darryl Burke for [StretchIcon.java](https://tips4java.wordpress.com/2012/03/31/s
 
 Microsoft for [Color.cs](http://referencesource.microsoft.com/#System.Drawing/commonui/System/Drawing/Color.cs)
 
+### UI Samples
+
+![alt text](https://i.imgur.com/BVpVkhm.png "UI example of Glitch Kernel")
+
 ### Static Samples
 
 ![alt text](http://i.imgur.com/fm98H5Y.png "Sample image generated with Glitch Kernel")
